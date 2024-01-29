@@ -19,11 +19,11 @@ public class FollowMouse : MonoBehaviour //모노비헤이비어 선언
             Input.mousePosition.y <= Screen.height)
         {
             Vector3 mousePosition = Input.mousePosition; // 마우스 포인터 위치
-            Vector3 worldPosition = cam.ScreenToWorldPoint(mousePosition); // 스크린 좌표를 월드좌표로 변환(매우 복잡한 유니티 카메라 체계이니 알려구 하지 말것 흐흐흐흐
+            Vector3 worldPosition = cam.ScreenToWorldPoint(mousePosition); // 스크린 좌표를 월드좌표로 변환(매우 복잡한 유니티 카메라 체계이니 함부로 사용하지 말것
             worldPosition.z = transform.position.z;
 
             transform.position = worldPosition; // 마우스 위치로 이동
-            spriteRenderer.enabled = true; // 가시화? 불투명화
+            spriteRenderer.enabled = true; // 가시화? 불투명화?
         }
         else
         {

@@ -7,6 +7,7 @@ public class RotateOnClick : MonoBehaviour
     public Camera cam;
     private SpriteRenderer spriteRenderer;
     private bool isRotating = false;
+    private int handposition; // 수정에 용이하도록 새 변수를 선언(고정좌표겂)
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class RotateOnClick : MonoBehaviour
             Vector3 mousePosition = Input.mousePosition; // 마우스의 현재 위치
             if (mousePosition.y <= Screen.height / 3) // 클릭 위치가 화면의 하단 1/3에 포함되는지 확인하고 그 위에서 클릭했으면 클릭으로 인식하지 않는 로직
             {
-                Vector3 worldPosition = cam.ScreenToWorldPoint(mousePosition); // 스크린 좌표를 월드 좌표로 변환(캠 기준)
+                //Vector3 worldPosition = cam.ScreenToWorldPoint(mousePosition); // 스크린 좌표를 월드 좌표로 변환(캠 기준일거임 아마)
+                Vector3 worldPosition = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, handposition, 0)); // 위에서 안먹혀서 뉴 벡터로 변형
                 float objectHeight = spriteRenderer.bounds.size.y;  // 아찬가지로 물체 높이
 
                 // 물체 배치
