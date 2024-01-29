@@ -378,6 +378,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/AnimationSample.cs"
 "Assets/Scripts/BallMovement.cs"
+"Assets/Scripts/ChangeImageOnClick.cs"
 "Assets/Scripts/FollowMouse.cs"
 "Assets/Scripts/RotateOnClick.cs"
 "Assets/speedmodulation.cs"

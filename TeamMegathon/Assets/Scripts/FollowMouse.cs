@@ -12,6 +12,17 @@ public class FollowMouse : MonoBehaviour //모노비헤이비어 선언
 
     void Update()
     {
+        // 이 내용은 새로운 클래스를 선언하여 구별함. 그래서 삭제
+        //if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼이 클릭되었을 때
+        //{
+            //spriteRenderer.sprite = clickedSprite; // 클릭된 스프라이트로 변경
+        //}
+        //else if (Input.GetMouseButtonUp(0))
+        //{
+
+        //}
+
+
         // 마우스가 화면 내에 있는가?
         if (Input.mousePosition.x >= 0 &&
             Input.mousePosition.x <= Screen.width &&
