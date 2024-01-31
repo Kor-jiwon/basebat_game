@@ -8,6 +8,10 @@ public class RotateOnClick : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isRotating = false;
     private int handposition; // 수정에 용이하도록 새 변수를 선언(고정좌표겂)
+    public static float mousex;
+    public static float bally;
+    public GameObject subject;
+    public GameObject mouse;
 
     void Start()
     {
@@ -34,6 +38,8 @@ public class RotateOnClick : MonoBehaviour
         }
     }
 
+   
+
     IEnumerator RotateObject()
     {
         isRotating = true;
@@ -50,9 +56,17 @@ public class RotateOnClick : MonoBehaviour
         }
      
         transform.rotation = endRotation; // 물체를 최종 각도로 회전
+        mousex = mouse.transform.position.x;
+        bally = subject.transform.position.y;
+        wait(0.8f);
+        SceneManager.LoadScene("fly");
+        Debug.Log("tst");
         isRotating = false;
-
-        // 현재 씬을 다시 시작. 이 부분은 나중에 지워두댐. 아니 지워야댐..
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        
+    }
+    IEnumerator wait( float t)
+    {
+        yield return new WaitForSeconds(t);
     }
 }
